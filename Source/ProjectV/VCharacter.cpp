@@ -58,12 +58,15 @@ void AVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AVCharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AVCharacter::StopJumping);
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AVCharacter::Move);
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AVCharacter::Look);
-		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Started, this, &AVCharacter::AttackPressed);
-		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Completed, this, &AVCharacter::AttackReleased);
+		EnhancedInputComponent->BindAction(JumpAction,		ETriggerEvent::Started,		this, &AVCharacter::Jump);
+		EnhancedInputComponent->BindAction(JumpAction,		ETriggerEvent::Completed,	this, &AVCharacter::StopJumping);
+
+		EnhancedInputComponent->BindAction(MoveAction,		ETriggerEvent::Triggered,	this, &AVCharacter::Move);
+
+		EnhancedInputComponent->BindAction(LookAction,		ETriggerEvent::Triggered,	this, &AVCharacter::Look);
+
+		EnhancedInputComponent->BindAction(AttackAction,	ETriggerEvent::Started,		this, &AVCharacter::AttackPressed);
+		EnhancedInputComponent->BindAction(AttackAction,	ETriggerEvent::Completed,	this, &AVCharacter::AttackReleased);
 	}
 }
 
