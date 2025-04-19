@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=unrealengine,c++,visualstudio,visualstudiocode,git,python,rider
 
 .DS_Store
-
+.vscode/
 ### C++ ###
 # Prerequisites
 *.d
